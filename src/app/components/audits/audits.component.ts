@@ -33,8 +33,8 @@ export class AuditsComponent implements OnInit {
   public displayedColumns: any = ["select","uri",'email',"clientIp",'client_org',"serverIp",'server_org',"statusMessage","createdAt","updatedAt"]
   public totalCount=0;
   public form:FormGroup;
-  public selection = new SelectionModel<AuditEntry>(true, []);
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  public selection = new SelectionModel<AuditEntry>(true, []);
 
   ngOnInit():void{
     this.getFilterValues();
