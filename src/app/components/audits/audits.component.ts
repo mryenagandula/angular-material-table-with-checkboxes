@@ -38,7 +38,7 @@ export class AuditsComponent implements OnInit {
 
   ngOnInit():void{
     this.getFilterValues();
-    this.getAudits(0,10)
+    this.getAudits(0,5)
   }
 
   public getAudits(pageIndex,pageSize){
@@ -76,14 +76,14 @@ export class AuditsComponent implements OnInit {
   public applyFilter(){
     this.selection.clear()
     this.paginator.firstPage();
-    this.getAudits(0,10);
+    this.getAudits(this.paginator.pageIndex,this.paginator.pageSize);
   }
 
   public clearFilter(){
     this.form.reset();
     this.selection.clear()
     this.paginator.firstPage();
-    this.getAudits(0,10);
+    this.getAudits(this.paginator.pageIndex,this.paginator.pageSize);
   }
 
   public isAllSelected() {
@@ -94,5 +94,12 @@ export class AuditsComponent implements OnInit {
 
   public masterToggle() {
     this.isAllSelected() ? this.selection.clear() : this.dataSource.forEach(row => this.selection.select(row));
+  }
+
+  /** For single selection uncomment this code. */
+  public selectRow(row){
+    this.selection.clear()
+    this.selection.select(row);
+    console.log(this.selection.selected)
   }
 }

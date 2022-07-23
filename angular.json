@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-material-table": {
+    "angular-material-table-with-checkboxes": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
